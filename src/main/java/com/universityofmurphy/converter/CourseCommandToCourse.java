@@ -24,7 +24,7 @@ public class CourseCommandToCourse  implements Converter<CourseCommand, Course> 
         course.setEndDate(source.getEndDate());
         course.setStartDate(source.getStartDate());
         course.setStartTime(source.getStartTime());
-        course.setEndTime(source.getEndTime());
+
         return course;
     }
 

@@ -19,7 +19,6 @@ public class CourseToCourseCommand  implements Converter<Course, CourseCommand> 
         }
 
         final CourseCommand courseCommand = new CourseCommand();
-
         courseCommand.setId(source.getId());
         courseCommand.setCourseName(source.getCourseName());
         courseCommand.setStartDate(source.getStartDate());
@@ -27,9 +26,7 @@ public class CourseToCourseCommand  implements Converter<Course, CourseCommand> 
         courseCommand.setStartTime(source.getStartTime());
         courseCommand.setStartDate(source.getStartDate());
         courseCommand.setEndTime(source.getEndTime());
-
+        courseCommand.setTeacher(source.getTeacher());
         return courseCommand;
-
     }
-
 }

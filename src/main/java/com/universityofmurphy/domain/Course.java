@@ -1,13 +1,27 @@
 package com.universityofmurphy.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+@AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "courses")
 public class Course extends BaseEntity {
+
+    @Builder
+    public Course (Student student, Long startTime, Long endTime, Long startDate, Long endDate, Teacher teacher){
+        this.student = student;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.teacher = teacher;
+    }
+
 
    @OneToOne
    @JoinColumn(name = "teacher_id")
@@ -25,17 +39,6 @@ public class Course extends BaseEntity {
    private Long startDate;
    @Column(name = "endDate")
    private Long endDate;
-
-
-   public Course (Student student, Long startTime, Long endTime, Long startDate, Long endDate, Teacher teacher){
-      this.student = student;
-      this.startTime = startTime;
-      this.endTime = endTime;
-      this.startDate = startDate;
-      this.endDate = endDate;
-      this.teacher = teacher;
-   }
-
 
    public String getCourseName() {
       return courseName;
@@ -75,5 +78,17 @@ public class Course extends BaseEntity {
 
    public void setEndDate(Long endDate) {
       this.endDate = endDate;
+   }
+
+   public Teacher getTeacher() {
+      return teacher;
+   }
+
+   public void setTeacher(Teacher teacher) {
+      this.teacher = teacher;
+   }
+
+   public void setStudent(Student student) {
+      this.student = student;
    }
 }

@@ -2,6 +2,9 @@ package com.universityofmurphy.commands;
 
 import lombok.NoArgsConstructor;
 
+import java.util.HashSet;
+import java.util.Set;
+
 
 @NoArgsConstructor
 public class StudentCommand {
@@ -9,6 +12,17 @@ public class StudentCommand {
     private String fname;
     private String lname;
     private Long  grade;
+    private Set<CourseCommand> courses = new HashSet<>();
+
+    public Set<CourseCommand> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(Set<CourseCommand> courses) {
+        this.courses = courses;
+    }
+
+
 
     public Long getId() {
         return id;

@@ -1,9 +1,10 @@
 package com.universityofmurphy.services.map;
 
 import com.universityofmurphy.domain.BaseEntity;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
-
+@Service
 public abstract class AbstractMapService <T extends BaseEntity, ID extends Long> {
 
     protected Map<Long,T> map = new HashMap<>();
@@ -15,7 +16,6 @@ public abstract class AbstractMapService <T extends BaseEntity, ID extends Long>
     T findById(ID id){
         return map.get(id);
     }
-
 
     T save(T object){
         if(object != null){

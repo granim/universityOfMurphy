@@ -1,24 +1,25 @@
 package com.universityofmurphy.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
-
+@AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "students")
-public class Student extends BaseEntity{
+public class Student extends Person{
 
-    public Student(Long id, String fname, String lname, Long grade, Set<Course> courses) {
-        super(id);
-        this.lname = lname;
-        this.fname = fname;
+    @Builder
+    public Student(Long id, String fname, String lname, String fname1, String lname1, Long grade, Set<Course> courses) {
+        super(id, fname, lname);
+        this.fname = fname1;
+        this.lname = lname1;
         this.grade = grade;
-        if(courses != null) {
-            this.courses = courses;
-        }
+        this.courses = courses;
     }
 
     @Column(name = "fisrtName")

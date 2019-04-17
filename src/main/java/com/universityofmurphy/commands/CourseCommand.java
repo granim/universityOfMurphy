@@ -1,5 +1,6 @@
 package com.universityofmurphy.commands;
 
+import com.universityofmurphy.domain.Teacher;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,4 +15,8 @@ public class CourseCommand {
     private Long endTime;
     private Long startDate;
     private Long endDate;
+    private TeacherCommand teacher;
+
+    public void setTeacher(Teacher teacher) {
+    }
 }
