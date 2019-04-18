@@ -9,5 +9,5 @@ public interface TeacherRepo extends CrudRepository<Teacher, Long> {
 
         Optional<Teacher> findById(Long aLong);
 
-
+        Optional<Teacher> findByLastName(String lName);
 }

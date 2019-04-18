@@ -4,19 +4,19 @@ import com.universityofmurphy.domain.Teacher;
 import com.universityofmurphy.services.TeacherService;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @Service
 public class TeacherMapService extends AbstractMapService<Teacher, Long> implements TeacherService {
 
     @Override
-    public Teacher findBylastName(String lname) {
+    public Optional<Teacher> findBylastName(String lname) {
         return null;
     }
 
     @Override
-    public List<Teacher> findAllByLastName(String lname) {
+    public Set<Teacher> findAllByLastName(String lname) {
         return null;
     }
 
