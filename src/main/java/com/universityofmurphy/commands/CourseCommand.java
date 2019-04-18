@@ -16,7 +16,11 @@ public class CourseCommand {
     private Long startDate;
     private Long endDate;
     private TeacherCommand teacher;
+    private StudentCommand student;
 
     public void setTeacher(Teacher teacher) {
     }
+
+
+
 }

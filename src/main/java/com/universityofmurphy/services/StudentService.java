@@ -1,13 +1,13 @@
 package com.universityofmurphy.services;
 
+import com.universityofmurphy.commands.StudentCommand;
 import com.universityofmurphy.domain.Student;
 
-import java.util.List;
+public interface StudentService {
 
-public interface StudentService extends CrudService<Student, Long> {
-
-    Student findBylastName(String lname);
-    List<Student> findAllByLastName(String lname);
-
+    Student findByStudentId(Long l);
+    StudentCommand saveById(Long studentId);
+    StudentCommand findAllCourse(Long courseId);
+    void deleteById(Long studentId);
 
 }

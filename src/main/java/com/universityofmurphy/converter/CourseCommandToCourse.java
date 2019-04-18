@@ -11,6 +11,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class CourseCommandToCourse  implements Converter<CourseCommand, Course> {
 
+    private final StudentCommandToStudent studentCommandToStudent;
+    private final TeacherCommandToTeacher teacherCommandToTeacher;
+
+    public CourseCommandToCourse(StudentCommandToStudent studentCommandToStudent, TeacherCommandToTeacher teacherCommandToTeacher) {
+        this.studentCommandToStudent = studentCommandToStudent;
+        this.teacherCommandToTeacher = teacherCommandToTeacher;
+    }
+
+
     @Synchronized
     @Nullable
     @Override
@@ -24,7 +33,8 @@ public class CourseCommandToCourse  implements Converter<CourseCommand, Course> 
         course.setEndDate(source.getEndDate());
         course.setStartDate(source.getStartDate());
         course.setStartTime(source.getStartTime());
-
+        course.setTeacher(teacherCommandToTeacher.convert(source.getTeacher()));
+        course.setStudent(studentCommandToStudent.convert(source.getStudent()));
         return course;
     }
 

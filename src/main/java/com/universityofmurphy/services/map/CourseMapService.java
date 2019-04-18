@@ -8,7 +8,7 @@ import java.util.Set;
 
 @Service
 public class CourseMapService extends AbstractMapService<Course, Long> implements CourseService {
-    
+
 
     @Override
     public String findCourse(String courseName) {
