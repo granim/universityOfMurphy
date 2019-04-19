@@ -1,10 +1,12 @@
 package com.universityofmurphy.services.map;
 
 import com.universityofmurphy.domain.BaseEntity;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
 @Service
+@Profile("map")
 public abstract class AbstractMapService <T extends BaseEntity, ID extends Long> {
 
     protected Map<Long,T> map = new HashMap<>();

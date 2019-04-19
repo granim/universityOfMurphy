@@ -2,12 +2,14 @@ package com.universityofmurphy.services.map;
 
 import com.universityofmurphy.domain.Teacher;
 import com.universityofmurphy.services.TeacherService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 import java.util.Set;
 
 @Service
+@Profile("map")
 public class TeacherMapService extends AbstractMapService<Teacher, Long> implements TeacherService {
 
     @Override

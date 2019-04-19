@@ -1,29 +1,36 @@
 package com.universityofmurphy.services.map;
 
+import com.universityofmurphy.commands.StudentCommand;
 import com.universityofmurphy.domain.Student;
 import com.universityofmurphy.services.StudentService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Set;
 
 @Service
+@Profile("map")
 public class StudentMapService extends AbstractMapService<Student, Long> implements StudentService {
 
 
     @Override
-    public Student findBylastName(String lname) {
-        return null;
-    }
-
-    @Override
-    public List<Student> findAllByLastName(String lname) {
-        return null;
-    }
-
-    @Override
     public Set<Student> findAll() {
         return super.findAll();
+    }
+
+    @Override
+    public Student findByStudentId(Long l) {
+        return null;
+    }
+
+    @Override
+    public StudentCommand saveById(Long studentId) {
+        return null;
+    }
+
+    @Override
+    public StudentCommand findAllCourse(Long courseId) {
+        return null;
     }
 
     @Override
